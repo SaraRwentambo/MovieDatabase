@@ -1,0 +1,136 @@
+nav{
+    background-color: brown;
+}
+
+.navbar-brand{
+    color:wheat;
+    font-weight: bolder;
+}
+.navbar-header a:hover{
+    background-color:tan;
+}
+
+.navbar-nav{
+    float:right;
+}
+
+#home{
+    float:right;
+    border-left: 1px solid white;
+}
+#note{
+    float:right;
+    border-left: 1px solid white;
+}
+
+/*How nav bar links display*/
+.navbar-nav a{
+    display: block;
+    color:white;
+    text-align:center;
+    padding:20px 20px;
+    
+    text-decoration: none;
+}
+
+/*alter color when mouse hovers*/
+li a:hover{
+    background-color: tan;
+}
+
+#searchButton{
+    height:5vh; 
+    background-color: rgb(110, 195, 25);   
+}
+
+#text{
+    width:50vw;
+    height: 5vh;
+}
+
+h3{
+    text-align: center;
+}
+
+.list-unstyled{
+    overflow: auto;
+    background-color: whitesmoke;
+    height: 20vh;
+    padding: 2vh 2vw;
+    border-radius: 1vw;
+}
+
+#sList{
+    list-style-type: disc;
+}
+
+#deletePeople{
+    background-color: rgb(163, 8, 8);
+    color: white;
+}
+
+#deleteUser{
+    background-color: rgb(163, 8, 8);
+    color: white;
+}
+
+.switchUser{
+    padding: 20vh;
+    margin-left: -3vw;
+}
+
+#changeUser{
+    background-color: rgb(236, 184, 41);
+    color: black;
+}
+
+#conUser{
+    color:brown;
+    font-weight: bolder;
+}
+
+#advSearch{
+    margin-right: -50vw;
+     
+}
+.background{
+    background-color: whitesmoke;
+}
+
+.advancedForm{
+    text-align: left;
+    margin-left: 5vw;
+
+}
+
+#findTitle{
+    width: 50vw;
+    height: 5vh;
+}
+
+#selectGenre{
+    width:15vw;
+    height: 5vh;
+}
+
+#selectRating{
+    width:15vw;
+    height: 5vh;
+}
+
+#advFind{
+    height:5vh; 
+    background-color: rgb(110, 195, 25);
+}
+
+#backTo{
+    margin-right: -10vw;
+     
+}
+
+footer{
+    text-align: center;
+}
+
+
+

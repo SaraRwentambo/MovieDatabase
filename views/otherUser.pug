@@ -1,0 +1,52 @@
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        title #{otherUser.username}
+        link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css')
+        link(rel='stylesheet' href='/css/otherUser.css')
+        script(src='/js/client.js')
+
+    body
+        //-Nav Bar
+        include ../views/partials/welcomeNavBar
+        if session.loggedIn
+
+            //- Username and type of user
+            #user.jumbotron.text-center
+                h1#userName #{otherUser.username}
+                h5#type
+                    | Type:
+                    if otherUser.userType==true
+                        span#userType Contributer
+                    else
+                        span#userType Regular
+                    br
+                    br
+            //- Search for Movies
+            .container
+                .row
+                    .col-sm-6
+                        h3 People They Follow
+                        ul.list
+                            each item in otherUser.followingPeople
+                                li
+                                    a(href="/people/"+item) #{item}
+                    .col-sm-6
+                        h3 Movie Reviews For:
+                        ul.list
+                            if otherUser.reviewedMovies.length===0
+                                li #{otherUser.username} did not make any reviews yet.
+                            else
+                                each item in otherUser.reviewedMovies
+                                    li
+                                        a(href='/movies/'+item) #{item}
+            //- Follow/Unfollow User
+            #follow.follow
+                if followUsers.includes(otherUser.username)
+                    button#unfollowUser(type='button' onclick='unfollowingUserButton();') Unfollow
+                else
+                    button#followUser(type='button' onclick='followingUserButton();') Follow
+            //-includes/footer.pug
+            include ../views/partials/footer
+            

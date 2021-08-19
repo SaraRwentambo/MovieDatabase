@@ -1,0 +1,31 @@
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        title Sign Up
+        link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css')
+        link(rel='stylesheet' href='/css/signupForm.css')
+    body
+        //-Nav Bar
+        include ../views/partials/welcomeNavBar
+        //- Create Account Form
+        #create.container
+            p#account.account Create an Account
+                form#form(action='/users' method='POST')
+                    label(for='uname') Create username:
+                    br
+                    input#uname(type='text' name='username' required='')
+                    br
+                    br
+                    label(for='pword') Create password:
+                    br
+                    input#pword(type='text' name='password' required='')
+                    br
+                    br
+                    button#createAcc(type='submit' value='Create Account') Create Account
+                p#already
+                    | Already have an account with us? 
+                    span
+                    button#logIn(type='button' name='button')
+                        a(href='/loginPage')  Log in!
+        

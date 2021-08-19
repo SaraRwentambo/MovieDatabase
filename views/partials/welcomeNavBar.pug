@@ -1,0 +1,27 @@
+nav.navbar
+    .container-fluid
+    if session && session.loggedIn
+        .navbar-header
+            a.navbar-brand(href="/") Movie Database
+        ul.nav.navbar-nav
+            li#home
+                a(href='/logout') Logout
+            li#note
+                a(href='/notifications') Notifications
+            li#findUser
+                a(href='/searchUsers') Search Users
+            li#findPeople
+                a(href='/searchPeople') Search People
+            li#findMovie
+                a(href='/searchMovies') Search Movies
+            li#myProfie
+                a(href='/users/'+session.username) My Profile
+
+    else
+        .navbar-header
+            a.navbar-brand(href="/") Movie Database
+        ul.nav.navbar-nav
+            li#note
+                a(href="/signupPage") Join Us
+            li#home
+                a(href="/loginPage") Login

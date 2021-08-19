@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <title>My profile</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/regularUser.css">
+    </head>
+    <body>
+    
+        <!-- Nav Bar-->
+        <nav class="navbar">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href=/html/Welcome.html>Movie Database</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li id="note"><a href=#>Notifications</a></li>
+                    <li id="home"><a href=/html/Welcome.html>Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Username and type of user-->
+        <div class="jumbotron text-center", id="user">
+            <h1 id="userName">Username</h1>
+            <h5 id="type" >Type: <span id="userType">Regular</span></h5><br><br>
+            <!-- Search for Movies-->
+            <div class="browse" id="browse">
+                <lable for="text" id="browseMovie">Browse Movies: </lable>
+                <input type="text" id="text"><span id="search"><button type="button" id="searchButton">Search</button></span>
+            </div>
+        </div>
+        
+  
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h3>People You Follow</h3>
+                    <ul class="list-unstyled">
+                        <li><input type="checkbox"><a href="/html/viewPeople.html"> somePeronA</a></li>
+                        <li><input type="checkbox"><a href="#"> somePerosnB</a></li>
+                        <li><input type="checkbox"><a href="#"> somePerosnC</a></li>
+                    </ul>
+                    <button type="button" id="deletePeople">Unfolow Selected</button>   
+                </div>
+                 <div class="col-sm-4">
+                    <h3>Users You Follow</h3>
+                    <ul class="list-unstyled">
+                        <li><input type="checkbox"><a href="/html/otherUser.html"> someUserA</a></li>
+                        <li><input type="checkbox"><a href="#"> someUserB</a></li>
+                        <li><input type="checkbox"><a href="#"> someUserC</a></li>
+                    </ul>
+                    <button type="button" id="deleteUser">Unfolow Selected</button>     
+                </div>
+                <div class="col-sm-4">
+                    <h3>You May Also Like</h3>        
+                    <ul class="list-unstyled" id="sList">
+                        <li><a href="/html/viewMovie.html"> Boogie Bear</a></li>
+                        <li><a href="#"> Attack of Boogie Bear</a></li>
+                        <li><a href="#"> Boogie Bear III: Return of Boogie Bear</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+   
+            
+        <!--Switching User Status-->
+        <div class="container switchUser" id="switchUser">
+            <button type="button" id="changeUser"><a href=/html/contributeUser.html>Upgrade to Contributing User</a></button>
+            <div id="question"> 
+                <h5 id="whatIsIt">What's a Contributing User?</h5>
+                <p>Upgrading to <span id="conUser">Contibuting User</span> unlocks additional benefits of our Movie Database such as:</p>
+                <ul>
+                    <li>Add new movies to our database</li>
+                    <li>Add new people (actors, writers, directors) to our database</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            &copy; Sara Rwentambo
+        </footer>
+
+    </body>
+</html>

@@ -1,0 +1,59 @@
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        title Edit Movie
+        link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css')
+        link(rel='stylesheet' href='/css/viewMovie.css')
+        script(src='/js/client.js')
+
+    body
+        //-Nav Bar
+        include ../views/partials/welcomeNavBar
+        if session.loggedIn
+            //- Movie Title
+            form(action='/editMovie' method='POST')
+                .container-fluid.title
+                    .row
+                        .col-sm-6
+                            label(for='titleName') Title
+                            input#titleName(readonly='readonly' type='text' name='title' value=movie.title)
+                            #movieInfo.movieInfo
+                                h5#date
+                                label(for='dt') Release date:
+                                input#dt(type='text' name='releaseDate' value=movie.releaseDate)
+                                h5#runtime
+                                label(for='time') Runtime (in minutes): 
+                                input#timeform(type='text' name='runtime' pattern="[0-9][0-9][0-9]" value=movie.runtime)
+                                #genre
+                                    h5#genreKey
+                                    label(for='genreList') Genre(s):
+                                    input#genreList(type='textbox' name='genre' value=genreList)
+                                h5#director
+                                label(for='directorList') Directed by: 
+                                input#directorList(type='textbox' name='director' value=directorList required='')
+                                h5#writer
+                                label(for='writersList') Written by:
+                                input#writersList(type='textbox' name='writers' value=writersList required='')
+                                h5#starring
+                                label(for='actorsList') Starring: 
+                                input#actorsList(type='textbox' name='actors' value=actorsList required='')
+                        .col-sm-6.image
+                            img(src=movie.poster alt=movie.title)
+
+                //- Plot
+                .container.plot
+                    .row
+                        label(for='plot') Plot
+                        input#plot(type='textbox' name='plot' value=movie.plot)
+
+                //-Save Changes button
+                input(type='submit' value='Save Changes')
+            
+            //-Discard Changes button
+            form(action='/movies/'+movie.title method='GET')
+                input(type='submit' value='Cancel')
+                    
+            
+            //-includes/footer.pug
+            include ../views/partials/footer

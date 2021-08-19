@@ -1,0 +1,126 @@
+body{
+    margin: 0;
+    padding:0;
+    background-image:white;
+    box-sizing: border-box;
+    bottom: 100%;
+}
+/*-------------Nav Bar syling----------------*/
+/*Navigation Bar*/
+nav{
+    background-color: brown;
+}
+
+.navbar-brand{
+    color:wheat;
+    font-weight: bolder;
+}
+.navbar-header a:hover{
+    background-color:tan;
+}
+
+.navbar-nav{
+    float:right;
+}
+
+#home{
+    float:right;
+    border-left: 1px solid white;
+}
+#note{
+    float:right;
+    border-left: 1px solid white;
+}
+
+/*How nav bar links display*/
+.navbar-nav a{
+    display: block;
+    color:white;
+    text-align:center;
+    padding:20px 20px;
+    
+    text-decoration: none;
+}
+
+/*alter color when mouse hovers*/
+li a:hover{
+    background-color: tan;
+}
+
+
+/*------------Form Styling--------------*/
+.container{
+    position: absolute;
+    margin-top: -20vh;
+    width:50vw;
+    height:100vh;
+    left: 25vw;
+    top: 20vw;
+    background-color: whitesmoke;
+    border-radius: 3vw;
+    padding:0vh 10vw;
+    box-sizing: border-box;
+    box-shadow: 0 5px 10px dimgray, 0 0px 10px dimgray;
+}
+
+#account{
+    width: 40vw;
+    font-size: 3vw;
+    padding: 4vw 4vh;
+    color: orange;
+    margin-top: -10;
+    margin-left: auto;
+    font-family: Arial;
+    
+}
+
+#form{
+    width: 20vw;
+    font-size: 1vw;
+    color: grey;
+    margin-top: 0;
+    margin-left: 3vw;
+    font-family: Arial;
+    padding: 0vh 0vw;
+    box-sizing: border-box;
+
+}
+
+input{
+    width: 20vw;
+    height: 4vh;
+    font-size: medium;
+}
+
+#createAcc{
+    width: 10vw;
+    height: 5vh;
+    border-radius: 3vw;
+    background-color: rgb(136, 221, 25);
+    font-size: medium;
+    margin-top: 1vh;
+    box-sizing: border-box;
+
+}
+
+/*-----------Log in Invitation-----------*/
+
+#already{
+    font-size: 1vw;
+    width: 50vw;
+    padding-top: 5vw;
+    font-family: Arial;
+}
+#logIn{
+    width: 5vw;
+    height: 5vh;
+    border-radius: 3vw;
+    background-color: tan;
+    font-size: small;
+}
+
+
+
+
+
+

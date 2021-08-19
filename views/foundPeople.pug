@@ -1,0 +1,25 @@
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        title Find People
+        link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css')
+        link(rel='stylesheet' href='/css/viewMovie.css')
+
+    body
+        //- Nav Bar
+        include ../views/partials/welcomeNavBar
+        if session.loggedIn
+
+            .container-fluid.title.background
+                h1#titleName People
+            br
+            ul
+                if peopleArray.length===0
+                    li Sorry. We could not find results that match that search.
+                else
+                    each item in peopleArray
+                        li
+                            a(href='people/'+item.name) !{item.name}
+        
+            include ../views/partials/footer

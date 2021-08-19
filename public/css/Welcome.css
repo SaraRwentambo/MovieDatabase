@@ -1,0 +1,56 @@
+nav{
+    background-color: brown;
+}
+
+.navbar-brand{
+    color:wheat;
+    font-weight: bolder;
+}
+.navbar-header a:hover{
+    background-color:tan;
+}
+
+.navbar-nav{
+    float:right;
+}
+
+#home{
+    float:right;
+    border-left: 1px solid white;
+}
+#note{
+    float:right;
+    border-left: 1px solid white;
+}
+#findUser{
+    float:right;
+    border-left: 1px solid white;
+}
+#findMovie{
+    float:right;
+    border-left: 1px solid white;
+}
+#myProfile{
+    float:right;
+    border-left: 1px solid white;
+}
+
+/*How nav bar links display*/
+.navbar-nav a{
+    display: block;
+    color:white;
+    text-align:center;
+    padding:20px 20px;
+    
+    text-decoration: none;
+}
+
+/*alter color when mouse hovers*/
+li a:hover{
+    background-color: tan;
+}
+
+
+footer{
+    text-align: center;
+}

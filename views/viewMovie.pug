@@ -1,0 +1,138 @@
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        title #{movie.title}
+        link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css')
+        link(rel='stylesheet' href='/css/viewMovie.css')
+        script(src='/js/client.js')
+
+    body
+        //-Nav Bar
+        include ../views/partials/welcomeNavBar
+        if session.loggedIn
+
+            //- Movie Title
+            .container-fluid.title
+                .row
+                    .col-sm-6
+                        h1#titleName #{movie.title}
+                        #movieInfo.movieInfo
+                            h5#date
+                            strong Release date: 
+                            span#dt #{movie.releaseDate}
+                            h5#avgRate
+                            strong Average rating: 
+                            span#avgR #{avgRev} /10
+                            h5#runtime
+                            strong Runtime: 
+                            span#time #{movie.runtime}
+                            #genre
+                                h5#genreKey
+                                strong Genre(s):
+                                ul.list-inline
+                                    each item in movie.genre
+                                        li 
+                                        a(href='/movies?genre='+item) #{item} 
+                            h5#director
+                            strong Directed by: 
+                            ul.list-inline
+                                each item in movie.director
+                                        li
+                                        a(href='/people/'+item) #{item} 
+
+                            h5#writer
+                            strong Written by:
+                            ul.list-inline.comma-list
+                                each writer in writers
+                                    li 
+                                    a(href='/people/'+writer) #{writer}
+                            h5#starring
+                            strong Starring: 
+                            ul.list-inline
+                                each item in movie.actors
+                                        li 
+                                        a(href='/people/'+item) #{item} 
+                    .col-sm-6.image
+                        img(src=movie.poster alt=movie.title)
+
+            //- Plot
+            .container.plot
+                .row
+                    h3 Plot
+                    p#plot #{movie.plot}
+            
+            if userType==true && movie.added==true
+                form(action='/editMoviePage/'+movie.title method=GET)
+                    input(type='submit' value='Edit') 
+                    
+            //- Old Reviews:
+            h3#reviewSection Reviews
+            if movie.reviews.length===0
+                br
+                h5 No reviews for this movie yet.
+            else
+                .container.oldReview
+                    .row
+                        .container
+                                each item in reviews
+                                    .container.oldEntry
+                                        h3#oldSortRev #{item.summary}
+                                        h5#oldUserRev 
+                                        strong Reviewed by: 
+                                        span#reviewer #{item.reviewer}
+                                        h5#oldRateRev
+                                        strong Rating: 
+                                        span#oldRate #{item.reviewRating} /10
+                                        p#oldLongRev
+                                        | #{item.fullReview}
+                                    br
+                            
+            //- Add new review
+            .container.newRev
+                .row
+                    br
+                    button#addRev(type='button' onclick='writeReview();') Write a review
+                    br
+                    form#newR(action='/addReview' method="POST")
+                        input(type='hidden' name='title' value=movie.title)
+                        br
+                        label(for='newShortRev') Write a short review:
+                        input#newShortRev(type='text' name='short')
+                        br
+                        label(for='newRateRev') Rate movie:
+                        select#newRateRev.form-control(pattern='[0-9]' name ='rating' required='')
+                            option(hidden='' disabled='' selected='' value='')  -- Select an option -- 
+                            option 1
+                            option 2
+                            option 3
+                            option 4
+                            option 5
+                            option 6
+                            option 7
+                            option 8
+                            option 9
+                            option 10
+                        br
+                        br
+                        label(for='newLongRev') Write a full review
+                        br
+                        textarea#newLongRev(type='textbox' name='full' required='')
+                        br
+                        br
+                        input#submit(type='submit' value='Submit')
+            //- Movies you might like
+            .container.suggest
+                .row
+                    h3 Similar Movies
+                    ul.list
+                        if similar.length!==0
+                            each item in similar
+                                li
+                                    a(href='/movies/'+item.title) #{item.title}
+                        else
+                            li None
+                        
+            //-includes/footer.pug
+            include ../views/partials/footer
+            

@@ -1,0 +1,31 @@
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    title Log in
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css')
+    link(rel='stylesheet' href='/css/loginForm.css')
+  body
+    //-Nav Bar
+    include ../views/partials/welcomeNavBar
+    h1#login.text-center  Log in to your account
+    .container
+      .form
+        form(action='/loginUser' method='POST')
+          label(for='username') Username:
+          input#username(type='text' name='username' required='')
+          br
+          br
+          label(for='password') Password:
+          input#password(type='text' name='password' required='')
+          br
+          br
+          input#log(type='submit' value='Log in')
+        br
+        #inviteSignup
+          h3#no Don't have an account with us?
+          button#signUp(type='button' name='button')
+            a(href='/signupPage')  Create Account
+    //-includes/footer.pug
+    include ../views/partials/footer
+    
